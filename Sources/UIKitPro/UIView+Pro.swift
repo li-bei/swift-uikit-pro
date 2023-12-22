@@ -17,7 +17,7 @@ extension UIView {
         return sizeThatFits(CGSize(width: width, height: 0)).height
     }
     
-    public func sizeThatFits() -> CGSize {
-        return sizeThatFits(.zero)
+    public func sizeThatFits(_ width: CGFloat = 0) -> CGSize {
+        return sizeThatFits(CGSize(width: width, height: 0))
     }
 }
