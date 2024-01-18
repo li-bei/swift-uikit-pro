@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "UIKitPro",
+    name: "swift-uikit-pro",
     products: [
         .library(name: "UIKitPro", targets: ["UIKitPro"]),
     ],
