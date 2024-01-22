@@ -8,4 +8,6 @@ extension UIView {
             return 1 / traitCollection.displayScale
         }
     }
+    
+    public var systemSpacing: CGFloat { 8 }
 }
