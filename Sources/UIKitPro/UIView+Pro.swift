@@ -7,7 +7,7 @@ extension UIView {
         if traitCollection.preferredContentSizeCategory.isAccessibilityCategory {
             return 1
         } else {
-            return 1 / traitCollection.displayScale
+            return 1 / displayScale
         }
     }
     
