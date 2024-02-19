@@ -5,7 +5,7 @@ extension NSMutableAttributedString {
         addAttributes(attributes, range: NSRange(location: 0, length: length))
     }
     
-    public func append(_ string: String) {
-        append(NSAttributedString(string: string))
+    public func append(_ string: String, attributes: [NSAttributedString.Key: Any]? = nil) {
+        append(NSAttributedString(string: string, attributes: attributes))
     }
 }
