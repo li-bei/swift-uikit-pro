@@ -1,6 +1,8 @@
 import UIKit
 
 extension UIView {
+    public var isShown: Bool { !isHidden }
+
     public var systemSpacing: CGFloat { 8 }
 
     public func heightThatFits(_ width: CGFloat = 0) -> CGFloat {
