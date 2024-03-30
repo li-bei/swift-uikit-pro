@@ -9,7 +9,7 @@ extension UIView {
         return sizeThatFits(CGSize(width: width, height: 0)).height
     }
 
-    public func sizeThatFits() -> CGSize {
-        return sizeThatFits(.zero)
+    public func pixelAlign(_ value: inout CGFloat) {
+        value = (value * displayScale).rounded() / displayScale
     }
 }
