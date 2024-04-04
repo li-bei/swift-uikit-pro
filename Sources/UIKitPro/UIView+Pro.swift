@@ -11,6 +11,8 @@ extension UIView {
         }
     }
 
+    public var systemSeparatorHeight: CGFloat { systemBorderWidth }
+
     public var systemSpacing: CGFloat { 8 }
 
     public func heightThatFits(_ width: CGFloat = 0) -> CGFloat {
