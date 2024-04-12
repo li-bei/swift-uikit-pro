@@ -3,6 +3,8 @@ import UIKit
 extension UIView {
     public var displayScale: CGFloat { traitCollection.displayScale }
 
+    public var isShown: Bool { !isHidden }
+
     public var systemBorderWidth: CGFloat {
         if traitCollection.preferredContentSizeCategory.isAccessibilityCategory {
             1
