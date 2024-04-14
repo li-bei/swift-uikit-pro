@@ -37,4 +37,12 @@ extension UITableView {
         register(viewClass, forHeaderFooterViewReuseIdentifier: identifier)
         return dequeueReusableHeaderFooterView(withIdentifier: identifier) as! View
     }
+
+    @available(iOS 13.0, *)
+    @discardableResult
+    public func performBatchUpdates(_ updates: () -> Void) async -> Bool {
+        await withCheckedContinuation { continuation in
+            performBatchUpdates(updates) { continuation.resume(returning: $0) }
+        }
+    }
 }
