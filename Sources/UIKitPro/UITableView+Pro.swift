@@ -1,6 +1,31 @@
 import UIKit
 
 extension UITableView {
+    public struct Offset {
+        public var indexPath: IndexPath?
+        public var y: CGFloat
+    }
+
+    public var offset: Offset {
+        get {
+            if let indexPath = indexPathsForVisibleRows?.first {
+                Offset(indexPath: indexPath, y: contentOffset.y + safeAreaInsets.top - rectForRow(at: indexPath).minY)
+            } else {
+                Offset(indexPath: nil, y: contentOffset.y)
+            }
+        }
+        set {
+            if let indexPath = newValue.indexPath {
+                if indexPath.section < numberOfSections, indexPath.row < numberOfRows(inSection: indexPath.section) {
+                    scrollToRow(at: indexPath, at: .top, animated: false)
+                    contentOffset.y += newValue.y
+                }
+            } else {
+                contentOffset.y = newValue.y
+            }
+        }
+    }
+
     public func dequeueReusable<Cell: UITableViewCell>(_ cellClass: Cell.Type, for indexPath: IndexPath) -> Cell {
         let identifier = String(reflecting: cellClass)
         register(cellClass, forCellReuseIdentifier: identifier)
