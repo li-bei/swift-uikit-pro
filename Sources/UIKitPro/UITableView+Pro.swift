@@ -1,7 +1,7 @@
 import UIKit
 
 extension UITableView {
-    public struct Offset {
+    public struct Offset: Codable, Sendable {
         public var indexPath: IndexPath?
         public var y: CGFloat
     }
