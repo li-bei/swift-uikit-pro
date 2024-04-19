@@ -18,6 +18,8 @@ extension UITableView {
             if let indexPath = newValue.indexPath {
                 if indexPath.section < numberOfSections, indexPath.row < numberOfRows(inSection: indexPath.section) {
                     scrollToRow(at: indexPath, at: .top, animated: false)
+                    layoutIfNeeded()
+                    scrollToRow(at: indexPath, at: .top, animated: false)
                     contentOffset.y += newValue.y
                 }
             } else {
