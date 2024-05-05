@@ -28,7 +28,7 @@ final class SnackbarButton: UIControlPro {
         let label = UILabel()
         label.adjustsFontForContentSizeCategory = true
         label.font = UIFontDescriptor
-            .preferredFontDescriptor(withTextStyle: .footnote)
+            .preferredFontDescriptor(withTextStyle: .subheadline)
             .withSymbolicTraits(.traitBold)
             .map { UIFont(descriptor: $0, size: 0) }
         label.translatesAutoresizingMaskIntoConstraints = false
